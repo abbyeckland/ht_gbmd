@@ -1,0 +1,6 @@
+Mean Obs Qw,Mean Sim Qw,% Error,Mean Obs Qs,Mean Sim Qs,% Error,Max Obs Qw,Max Sim Qw,% Error,Day Peak Qw Obs,Day Peak Qw Sim,Max Obs Qs,Max Sim Qs,% Error,Day Peak Qs Obs,Day Peak Qs Sim,CC Qw,Cov Qw,CC Qs,Cov Qs,Std Qw Obs,Std Qs Obs
+11036.6571996,4.2708791629e+248,-3.869721679e+246,14391.3623649,24019.7099258,-66.9036559348,41997.1633333,1.55887089446e+251,-3.71184806479e+248,244,364,68813.2426143,856637.720053,-1144.87335215,259,217,"[[  1.  -0.]
+ [ -0.  nan]]","[[  2.26603539e+008  -3.67314512e+252]
+ [ -3.67314512e+252               inf]]","[[  1.  -0.]
+ [ -0.  nan]]","[[  6.65621916e+008  -5.75806618e+252]
+ [ -5.75806618e+252               inf]]",15052.6690097,25798.471448

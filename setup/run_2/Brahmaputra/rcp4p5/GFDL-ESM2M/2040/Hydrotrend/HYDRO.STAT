@@ -1,0 +1,48 @@
+ Values used to calculate discharge and sediment discharge
+ for the stochastic model in hydrotrend run: 
+ Brahmaputra Basin, Time period: 2026-2055, Input data based on Darby 2015, compiled by Abby Eckland, June 2020
+
+epoch: 1 
+*****************************************************************
+Qsbar = alpha9 * Lithology * (1-TE) * Eh * pow(A,alpha11) * pow((Q*yTOs/1e9),alpha10) * H * Tbar
+	 A = 565116.10; river basin area (km2)
+	 H = 7.50; maxalt = basin relief (km)
+
+	 Tbar =  -0.34
+	 Lithology = 1.68 (-)
+	 Eh = 2.00; Anthropogenic factor (-)
+	 alpha9, alpha10, alpha11 are global constants:
+	 alpha9 = 2.00e-02
+	 alpha10 = 3.10e-01
+	 alpha11 = 5.00e-01
+Qsbar = 28090.19 (kg/s)
+Glacier sediment flux is calculated seperately. The mean suspended sediment
+flux of glaciers is: 553.42 (kg/s)
+
+
+Qbar = (sumQ(daily))/number of days
+Qbar = 21088.30 (m3/s)
+
+
+(Qs(daily)/Qsbar) = psi(daily) * (Q(daily)/Qbar)^C
+	 Qs(daily) = daily sediment discharge (kg/s)
+	 Qsbar = 28643.62 (kg/s); used long-term average of Qs (fractions of Qs(daily)/nr. of fractions)
+
+	 psi = log-normal random variable,
+		 psi   = a random number from a lognormal distribution with
+		 mean 1 and sigma psi = 0.763 * (0.99995^Qbar)
+	 sigma psi = 0.265819
+
+	 Q(daily) = daily discharge (m3/s)
+	 Qbar = 21088.30 (m3/s); long-term average of Q, calculated by formula explained above
+
+	 C	= a random number from a distribution with mean E(C)
+		 and standard deviation sigma-C, where:
+		 E(C) = (1.4 - (0.025*T) + (0.00013*H) + (0.145*log10(Qsbar))
+		 E(C) = 3.028734
+		 sigma-C = 0.17 + (0.0000183 * Qbar)
+		 sigma-C = 0.555916
+
+*****************************************************************
+
+
