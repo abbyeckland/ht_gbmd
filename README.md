@@ -1,6 +1,6 @@
 # This repository contains HydroTrend model outputs for the Ganges and Brahmaputra basins.
 
-All model outputs are contained in this repository.
+All scripts, model outputs, climate, water and sediment data, and jupyter notebooks for post processing, are contained in this repository.
 
 Clone this repository to run on your local machine.
 
@@ -56,3 +56,37 @@ This step concatenates all of the ASCII outputs from the model runs into one CSV
 
 ### Step 4: Check out the outputs!
 Go to the post-processing folder to check out the processed data and see how the figures are generated.
+
+Here you will find several notebooks described below:
+- GR_projected_rcp4p5.ipynb
+    - Loads output data and plots water and sediment discharge projections from 2006-2096 for *rcp4.5* climate scenario for Ganges River
+- GR_projected_rcp8.5.ipynb
+    - Loads output data and plots water and sediment discharge projections from 2006-2096 for *rcp8.5* climate scenario for Ganges River
+- GR_reference.ipynb
+    - Compares simulated versus observed water discharge data for the Ganges River
+    - Evalulates mean and maximum simulated versus observed water discharge
+    - Calculates goodness-of fit standards for water discharge
+    - Plots simulated mean daily and mean annual water discharge compared with observed values
+    - Computes average sediment discharge over reference scenario using the sum method
+- GR_peakdischarge.ipynb
+    - Loads simulation arrays for each time period, reshapes these into annual arrays
+    - Calculates how the magnitude of peak discharge and minimum discharge changes over the century, as well as the timing of peak water discharge
+    - Plots how water hydrographs and sediment loads change over the century for the Ganges River
+- BR_projected_rcp4.5.ipynb
+    - Loads output data and plots water and sediment discharge projections from 2006-2096 for *rcp4.5* climate scenario for Brahmaputra River
+- BR_projected_rcp8.5.ipynb
+    - Loads output data and plots water and sediment discharge projections from 2006-2096 for *rcp8.5* climate scenario for Brahmaputra River
+- BR_reference.ipynb
+    - Compares simulated versus observed water discharge data for the Brahmaputra River
+    - Evalulates mean and maximum simulated versus observed water discharge
+    - Calculates goodness-of fit standards for water discharge
+    - Plots simulated mean daily and mean annual water discharge compared with observed values
+    - Computes average sediment discharge over reference scenario using the sum method
+- BR_peakdischarge.ipynb
+    - Loads simulation arrays for each time period, reshapes these into annual arrays
+    - Calculates how the magnitude of peak discharge and minimum discharge changes over the century, as well as the timing of peak water discharge
+    - Plots how water hydrographs and sediment loads change over the century for the Brahmaputra River
+- GBR_combo_peakdischarge.ipynb
+    - Same notebook as GR_peakdischarge.ipynb and BR_peakdischarge.ipynb, but combines water and sediment discharge to get loads for the combined GB river
+    
+***See README files in remaining folders for an idea of what else is provided in this repository.***
