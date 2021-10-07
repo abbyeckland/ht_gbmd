@@ -15,33 +15,33 @@ Qsbar = alpha9 * Lithology * (1-TE) * Eh * pow(A,alpha11) * pow((Q*yTOs/1e9),alp
 	 alpha9 = 2.00e-02
 	 alpha10 = 3.10e-01
 	 alpha11 = 5.00e-01
-Qsbar = 22759.55 (kg/s)
+Qsbar = 22800.91 (kg/s)
 Glacier sediment flux is calculated seperately. The mean suspended sediment
-flux of glaciers is: 670.82 (kg/s)
+flux of glaciers is: 553.42 (kg/s)
 
 
 Qbar = (sumQ(daily))/number of days
-Qbar = 18158.48 (m3/s)
+Qbar = 18167.59 (m3/s)
 
 
 (Qs(daily)/Qsbar) = psi(daily) * (Q(daily)/Qbar)^C
 	 Qs(daily) = daily sediment discharge (kg/s)
-	 Qsbar = 23430.37 (kg/s); used long-term average of Qs (fractions of Qs(daily)/nr. of fractions)
+	 Qsbar = 23354.33 (kg/s); used long-term average of Qs (fractions of Qs(daily)/nr. of fractions)
 
 	 psi = log-normal random variable,
 		 psi   = a random number from a lognormal distribution with
 		 mean 1 and sigma psi = 0.763 * (0.99995^Qbar)
-	 sigma psi = 0.307757
+	 sigma psi = 0.307617
 
 	 Q(daily) = daily discharge (m3/s)
-	 Qbar = 18158.48 (m3/s); long-term average of Q, calculated by formula explained above
+	 Qbar = 18167.59 (m3/s); long-term average of Q, calculated by formula explained above
 
 	 C	= a random number from a distribution with mean E(C)
 		 and standard deviation sigma-C, where:
 		 E(C) = (1.4 - (0.025*T) + (0.00013*H) + (0.145*log10(Qsbar))
-		 E(C) = 3.015483
+		 E(C) = 3.015597
 		 sigma-C = 0.17 + (0.0000183 * Qbar)
-		 sigma-C = 0.502300
+		 sigma-C = 0.502467
 
 *****************************************************************
 

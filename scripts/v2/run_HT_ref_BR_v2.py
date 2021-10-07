@@ -45,18 +45,18 @@ for i in range(n_days):
 
 # The following code chunks are reshaping the output arrays into useful datasets for post-processing
 # Calculate mean annual discharge
-Qw_Reshape = q.reshape(27,365)
+Qw_Reshape = q.reshape(30,365)
 Qw_Mean_Rows = np.mean(Qw_Reshape, axis = 1)
 
 # Calculate mean daily discharge
-Qw_Reshape = q.reshape(27,365)
+Qw_Reshape = q.reshape(30,365)
 Qw_Mean_Cols = np.mean(Qw_Reshape, axis = 0)
 
 # Calculate day of peak Qw
 Qw_Max_Index_Col = np.nanargmax(Qw_Mean_Cols, axis=0)
 
 # Calculate mean daily sediment discharge
-Qs_Reshape = qs.reshape(27,365)
+Qs_Reshape = qs.reshape(30,365)
 Qs_Mean_Rows = np.mean(Qs_Reshape, axis = 1)
 
 # Calculate mean daily sediment discharge
@@ -88,7 +88,7 @@ with open(filename, 'w') as csvfile:
 # since we can compare simulated outputs to observed data.
 
 # Read in csv with recent data from Bahadurabad Bridge,
-# we only have 27 years of data, making this script different from the Ganges script
+# we only have 30 years of data, making this script different from the Ganges script
 Baha_csv = pd.read_csv('water_data/Brahmaputra/Baha_Qw_1976-2002.csv')
 
 # Create numpy array for date and discharge columns
@@ -107,7 +107,7 @@ Qw_Reshape_Obs = Qw_Baha.reshape(27,365)
 Qw_Mean_Rows_Obs = np.mean(Qw_Reshape_Obs, axis = 1)
 
 # Calculate simulated mean annual flow
-Qw_Reshape_Sim = q.reshape(27,365)
+Qw_Reshape_Sim = q[0:-1095].reshape(27,365)
 Qw_Mean_Rows_Sim = np.mean(Qw_Reshape_Sim, axis = 1)
 
 # calculate observed mean daily flow
@@ -122,7 +122,7 @@ Qs_Reshape_Obs = Qs_Baha.reshape(27,365)
 Qs_Mean_Rows_Obs = np.mean(Qs_Reshape_Obs, axis = 1)
 
 # Calculate simulated mean annual sediment discharge
-Qs_Reshape_Sim = qs.reshape(27,365)
+Qs_Reshape_Sim = qs[0:-1095].reshape(27,365)
 Qs_Mean_Rows_Sim = np.mean(Qs_Reshape_Sim, axis = 1)
 
 # Calculate observed mean daily sediment discharge
@@ -144,7 +144,7 @@ import csv
 # Field names (headers)
 fields = ['Mean Obs Qw', 'Mean Sim Qw', '% Error', 'Mean Obs Qs', 'Mean Sim Qs', '% Error', 'Max Obs Qw', 'Max Sim Qw', '% Error', 'Day Peak Qw Obs', 'Day Peak Qw Sim', 'Max Obs Qs', 'Max Sim Qs', '% Error', 'Day Peak Qs Obs', 'Day Peak Qs Sim', 'CC Qw', 'Cov Qw', 'CC Qs', 'Cov Qs', 'Std Qw Obs', 'Std Qs Obs',]
 # Calculate statstics for each field
-rows = [np.nanmean(Qw_Baha), q.mean(), (((np.nanmean(Qw_Baha)-q.mean())/np.nanmean(Qw_Baha))*100), np.nanmean(Qs_Baha), qs.mean(), (((np.nanmean(Qs_Baha)-qs.mean())/np.nanmean(Qs_Baha))*100), np.nanmax(Qw_Mean_Cols_Obs), Qw_Daily.max(), ((np.nanmax(Qw_Mean_Cols_Obs)-Qw_Daily.max())/np.nanmax(Qw_Mean_Cols_Obs)*100), Qw_Max_Index_Col_Obs, Qw_Max_Index_Col_Sim, np.nanmax(Qs_Mean_Cols_Obs), Qs_Daily.max(), ((np.nanmax(Qs_Mean_Cols_Obs)-Qs_Daily.max())/np.nanmax(Qs_Mean_Cols_Obs)*100), Qs_Max_Index_Col_Obs, Qs_Max_Index_Col_Sim, np.corrcoef(Qw_Baha, q), np.cov(Qw_Baha, q), np.corrcoef(Qs_Baha, q), np.cov(Qs_Baha, q), np.nanstd(Qw_Baha), np.nanstd(Qs_Baha)]
+rows = [np.nanmean(Qw_Baha), q[0:-1095].mean(), (((np.nanmean(Qw_Baha)-q[0:-1095].mean())/np.nanmean(Qw_Baha))*100), np.nanmean(Qs_Baha), qs[0:-1095].mean(), (((np.nanmean(Qs_Baha)-qs[0:-1095].mean())/np.nanmean(Qs_Baha))*100), np.nanmax(Qw_Mean_Cols_Obs), Qw_Daily.max(), ((np.nanmax(Qw_Mean_Cols_Obs)-Qw_Daily.max())/np.nanmax(Qw_Mean_Cols_Obs)*100), Qw_Max_Index_Col_Obs, Qw_Max_Index_Col_Sim, np.nanmax(Qs_Mean_Cols_Obs), Qs_Daily.max(), ((np.nanmax(Qs_Mean_Cols_Obs)-Qs_Daily.max())/np.nanmax(Qs_Mean_Cols_Obs)*100), Qs_Max_Index_Col_Obs, Qs_Max_Index_Col_Sim, np.corrcoef(Qw_Baha, q[0:-1095]), np.cov(Qw_Baha, q[0:-1095]), np.corrcoef(Qs_Baha, q[0:-1095]), np.cov(Qs_Baha, q[0:-1095]), np.nanstd(Qw_Baha), np.nanstd(Qs_Baha)]
 
 # Direct csv to be saved in relative path location
 collections.__file__

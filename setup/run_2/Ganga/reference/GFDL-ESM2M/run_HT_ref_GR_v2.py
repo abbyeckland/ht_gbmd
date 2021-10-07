@@ -90,7 +90,7 @@ with open(filename, 'w') as csvfile:
 # Read in csv with recent water discharge data from Hardinge Bridge
 Hard_csv = pd.read_csv('water_data/Ganges/Hardinge_Qw_1976-2006.csv')
 
-# Create numpy array from date and discharge columns
+# Create numpy array for date and discharge columns
 Date_Hard_csv = Hard_csv['Date']
 Qw_Hard_csv = Hard_csv['Discharge (m3/s)']
 Date_Hard_csv = [pd.to_datetime(d) for d in Date_Hard_csv]

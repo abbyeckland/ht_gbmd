@@ -1,8 +1,8 @@
 -------------------------------------------------------------------
-Climate input file for Hydrotrend. DO NOT REMOVE THOSE LINES	
-First line: the number of rows of input values and dt [hours]	
+Climate input file for Hydrotrend. DO NOT REMOVE THOSE LINES
+First line: the number of rows of input values and dt [hours]
 Rest lines: Total precipitation (mm) and average temperature in degrees C.	
-Values are per timestep.	
+Values are per timestep.
 --------------------------------------------------------------------
 10958	24
   0.038618	 20.054977

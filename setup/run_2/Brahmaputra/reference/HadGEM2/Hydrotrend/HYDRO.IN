@@ -2,7 +2,7 @@ Brahmaputra Basin, Time period: 1976-2006 (reference scenario), Input data based
 ON				2) Write output to ASCII files (ON/OFF)
 ./HYDRO_OUTPUT/			3) Location where the output data will be stored (not optional for web)
 1				4) No. of epochs to run (leave 1 line blank between epochs; start copying from nr 5)
-1976 27 D			5) Start year; no. of years to run; averaging interval: D,M,S or Y
+1976 30 D			5) Start year; no. of years to run; averaging interval: D,M,S or Y
 4				6) Number of suspended sed. grain sizes to simulate (max 10)
 .2 .2 .25 .35				7) Proportion of sediment in each grain size (sum=1)
 20 0 2				8) Yrly Tbar: start (C), change/yr (C/a), std dev
